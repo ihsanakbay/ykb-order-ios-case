@@ -17,18 +17,10 @@ Simple eCommerce App (Swift, UIKit, MVVM, Combine, Protocol Oriented, No Storybo
 
 ## Screenshots
 
-<div>
-<div>
-<img src="Spendy/Screenshots/1.png" width="207" height="421"> <img src="Spendy/Screenshots/2.png" width="207" height="421"> <img src="Spendy/Screenshots/3.png" width="207" height="421"> <img src="Spendy/Screenshots/4.png" width="207" height="421">
-</div>
-<div>
-<img src="Spendy/Screenshots/5.png" width="207" height="421"> <img src="Spendy/Screenshots/6.png" width="207" height="421"> <img src="Spendy/Screenshots/7.png" width="207" height="421">
-</div></div>
 
 
-![login](https://user-images.githubusercontent.com/43925452/221654774-9a1d4c44-56df-4a1b-9407-5c74958bf128.png)
-![list](https://user-images.githubusercontent.com/43925452/221654779-e24c213b-fa4e-4a66-9308-8a7410bea8fe.png)
-![detail](https://user-images.githubusercontent.com/43925452/221654785-dd979146-4868-46c4-87a4-7b56e143111d.png)
-![order](https://user-images.githubusercontent.com/43925452/221654766-a3b56a0c-17e3-4b4e-8bab-ce84634e7372.png)
-![order2](https://user-images.githubusercontent.com/43925452/221654758-ebd8a8a9-cad4-4fda-9342-c72d7303488d.png)
-
+![login](https://user-images.githubusercontent.com/43925452/221658510-822a38f8-e37d-429a-be43-8d9a5cd4ac21.png)
+![list](https://user-images.githubusercontent.com/43925452/221658524-38f46a92-df56-4727-9a9f-b201caf318a7.png)
+![detail](https://user-images.githubusercontent.com/43925452/221658561-8f6dca97-faab-4149-943f-57c5da86b1e9.png)
+![order](https://user-images.githubusercontent.com/43925452/221658595-a585333d-2c90-4adf-b72a-0a6f30b711ea.png)
+![order2](https://user-images.githubusercontent.com/43925452/221658591-3b3f12ed-8eda-47eb-a17f-0aa34d1e8eca.png)
