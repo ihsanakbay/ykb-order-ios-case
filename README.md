@@ -9,15 +9,13 @@ Simple eCommerce App (Swift, UIKit, MVVM, Combine, Protocol Oriented, No Storybo
 - User cannot add more products than stock amount
 - Order
 
-## Used Libraries:
+## Libraries:
 - Alamofire
 - SnapKit
 - Kingfisher
 - Fake Api: https://dummyjson.com
 
-## Screenshots
-
-
+## Screenshots:
 
 ![login](https://user-images.githubusercontent.com/43925452/221658510-822a38f8-e37d-429a-be43-8d9a5cd4ac21.png)
 ![list](https://user-images.githubusercontent.com/43925452/221658524-38f46a92-df56-4727-9a9f-b201caf318a7.png)
