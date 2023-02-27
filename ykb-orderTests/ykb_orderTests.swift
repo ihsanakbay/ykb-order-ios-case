@@ -9,28 +9,71 @@ import XCTest
 @testable import ykb_order
 
 final class ykb_orderTests: XCTestCase {
+	private var sut: RootViewModel!
+	private var loginStorageService: MockLoginStorageService!
+	private var output: MockRootViewModelOutput!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+	override func setUpWithError() throws {
+		loginStorageService = MockLoginStorageService()
+		sut = RootViewModel(loginStorageService: loginStorageService)
+		output = MockRootViewModelOutput()
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+		sut.output = output
+	}
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+	override func tearDownWithError() throws {
+		sut = nil
+		loginStorageService = nil
+	}
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+	func testShowLogin_whenLoginStorageReturnsEmptyAccessToken() throws {
+		loginStorageService.storage = [:]
+		sut.checkAuth()
+		XCTAssertEqual(output.checkArray.first, .login)
+	}
+	
+	func testShowLogin_whenLoginStorageReturnsEmptyString() throws {
+		loginStorageService.storage["ACCESS_TOKEN"] = ""
+		sut.checkAuth()
+		XCTAssertEqual(output.checkArray.first, .login)
+	}
 
+	func testShowMain_whenLoginStorageReturnsAccessToken() throws {
+		loginStorageService.storage["ACCESS_TOKEN"] = "12345asdfg"
+		sut.checkAuth()
+		XCTAssertEqual(output.checkArray.first, .main)
+	}
+}
+
+class MockLoginStorageService: LoginStorageService {
+	var accessTokenKey: String {
+		return "ACCESS_TOKEN"
+	}
+
+	var storage: [String: String] = [:]
+
+	func setUserAccessToken(value: String) {
+		storage[accessTokenKey] = value
+	}
+
+	func getUserAccessToken() -> String? {
+		return storage[accessTokenKey]
+	}
+}
+
+class MockRootViewModelOutput: RootViewModelOutput {
+	enum Check {
+		case login
+		case main
+	}
+
+	var checkArray: [Check] = []
+
+	func showLoginPage() {
+		checkArray.append(.login)
+	}
+
+	func showMainPage() {
+		checkArray.append(.main)
+	}
 }
