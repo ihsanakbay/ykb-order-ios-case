@@ -6,7 +6,7 @@ Simple eCommerce App (Swift, UIKit, MVVM, Combine, Protocol Oriented, No Storybo
 - Product List
 - Product Detail
 - Add to Cart
-- Stepper Max Value Set to Quantity of Product
+- User cannot add more products than stock amount
 - Order
 
 ## Used Libraries:
